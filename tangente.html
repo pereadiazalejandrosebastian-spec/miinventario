@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Función para calcular la Tangente</title>
+    </head>
+    <body>
+        <h1>Calculadora de Tangente</h1>
+        <p>Esta página calcula la tangente de un ángulo dado en grados.</p>
+        <form id="tangentForm">
+            <label for="angle">Ángulo (en grados):</label>
+            <input type="number" id="angle" name="angle" required>
+            <input type="submit" value="Calcular Tangente">
+        </form>
+        <p id="result"></p>
+
+        <script>
+            document.getElementById('tangentForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const angleInDegrees = parseFloat(document.getElementById('angle').value);
+                const angleInRadians = angleInDegrees * (Math.PI / 180);
+                const tangentValue = Math.tan(angleInRadians);
+                document.getElementById('result').textContent = 'La tangente de ' + angleInDegrees + '° es: ' + tangentValue;
+            });
+        </script>
+    </body>
+
+</html>
